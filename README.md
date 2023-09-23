@@ -1,6 +1,8 @@
 M&Y Eğitim Akademisi Portfolio Projesi
 Bu ASP.NET Core MVC 5 tabanlı kişisel web uygulamasıdır.
 
+Db sogruları stored procedureler üzerinden yapıldı.
+
 Teknolojiler
 Bu projede aşağıdaki teknolojiler kullanılmıştır:
 
@@ -18,4 +20,4 @@ Kurulum ve Kullanma
 
 git clone https://github.com/cpeker16/NetMvcPortfolio Mssql deki connection string' inizi değiştirerek projeyi ayağa kaldırabilirsiniz.
 
-Kayıt olma sayfasına gitmek için kendi Local adresinizin sonuna /Register ekleyerek index' ine gitmeniz gerekmektedir. Kayıt oluşturduktan sonra login sayfasına yönlendirileceksiniz ve login yaparak admin panelini kullanmaya başlayabilirsiniz.
+Proje içerisinde bulunan db scriptini çalıştırarak database kontrolü sağlayabailirsiniz.
