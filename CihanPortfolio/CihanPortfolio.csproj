@@ -91,6 +91,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Db\Dbscript.txt" />
     <Content Include="Global.asax" />
     <Content Include="theme\assets\css\style-starter.css" />
     <Content Include="theme\assets\fonts\fontawesome-webfont.svg" />

@@ -4,9 +4,9 @@ Bu ASP.NET Core MVC 5 tabanlı kişisel web uygulamasıdır.
 Teknolojiler
 Bu projede aşağıdaki teknolojiler kullanılmıştır:
 
-ASP.NET MVC
-Db First
-Entity Framework
+ASP.NET MVC,
+Db First,
+Dapper,
 SQL Server
 
 
