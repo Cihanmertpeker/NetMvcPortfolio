@@ -11,17 +11,21 @@ using System.Web.Mvc;
 using System.Web.Services.Description;
 using System.Web.UI.WebControls;
 using System.Web.WebSockets;
+using System.ComponentModel;
 
 namespace CihanPortfolio.Controllers
 {
     public class HomeController : Controller
-    {        
+    {
 
 
         [HttpGet]
         public ActionResult Index()
         {
+
+            //Burada sql bağlantısı oluşturuluyor
             SqlConnection connection = new SqlConnection("server=.\\SQLExpress; database=CvDbCihan; integrated security =true");
+
 
             var about = connection.QueryFirst<About>(sql: "select * from Abouts");
 
@@ -42,6 +46,8 @@ namespace CihanPortfolio.Controllers
 
             var viewModel = new IndexViewModel();
 
+            //Ekranda gösterilecek property'ler viewModele eklendi.
+
             viewModel.About = about;
             viewModel.Skills = skills;
             viewModel.Services = services;
@@ -51,7 +57,8 @@ namespace CihanPortfolio.Controllers
 
             return View(viewModel);
         }
-        
+
+         //Sayfadan girilen iletişim bilgilerinin post edildiği method 
         [HttpPost]
         public ActionResult Contact(Contact contact)
         {
@@ -60,14 +67,14 @@ namespace CihanPortfolio.Controllers
 
             return RedirectToAction("Index");
         }       
-
+        //iletişim sayfasını ekrana getirir
         [HttpGet]
         public ActionResult Contact()
         {
 
             return View();
         }
-
+        //portfolio sayfasını ekrana getirir
         [HttpGet]
         public ActionResult Portfolio()
         {
