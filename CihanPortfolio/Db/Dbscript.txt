@@ -1,6 +1,6 @@
 ﻿USE [CvDbCihan]
 GO
-/****** Object:  Table [dbo].[Abouts]    Script Date: 24.09.2023 00:33:40 ******/
+/****** Object:  Table [dbo].[Abouts]    Script Date: 24.09.2023 02:13:17 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -17,7 +17,7 @@ CREATE TABLE [dbo].[Abouts](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Contacts]    Script Date: 24.09.2023 00:33:40 ******/
+/****** Object:  Table [dbo].[Contacts]    Script Date: 24.09.2023 02:13:17 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -34,7 +34,7 @@ CREATE TABLE [dbo].[Contacts](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[CustomerReviews]    Script Date: 24.09.2023 00:33:40 ******/
+/****** Object:  Table [dbo].[CustomerReviews]    Script Date: 24.09.2023 02:13:17 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -50,7 +50,7 @@ CREATE TABLE [dbo].[CustomerReviews](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Services]    Script Date: 24.09.2023 00:33:40 ******/
+/****** Object:  Table [dbo].[Services]    Script Date: 24.09.2023 02:13:17 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -64,7 +64,7 @@ CREATE TABLE [dbo].[Services](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Skills]    Script Date: 24.09.2023 00:33:40 ******/
+/****** Object:  Table [dbo].[Skills]    Script Date: 24.09.2023 02:13:17 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -79,7 +79,7 @@ CREATE TABLE [dbo].[Skills](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Slogans]    Script Date: 24.09.2023 00:33:40 ******/
+/****** Object:  Table [dbo].[Slogans]    Script Date: 24.09.2023 02:13:17 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -129,7 +129,7 @@ SET IDENTITY_INSERT [dbo].[Services] OFF
 GO
 SET IDENTITY_INSERT [dbo].[Skills] ON 
 GO
-INSERT [dbo].[Skills] ([Id], [Title], [Rate]) VALUES (1, N'CSharp', 75)
+INSERT [dbo].[Skills] ([Id], [Title], [Rate]) VALUES (1, N'C#', 75)
 GO
 INSERT [dbo].[Skills] ([Id], [Title], [Rate]) VALUES (2, N'SQL', 85)
 GO
@@ -141,7 +141,7 @@ INSERT [dbo].[Skills] ([Id], [Title], [Rate]) VALUES (5, N'Html', 85)
 GO
 INSERT [dbo].[Skills] ([Id], [Title], [Rate]) VALUES (6, N'Asp Net MVC', 90)
 GO
-INSERT [dbo].[Skills] ([Id], [Title], [Rate]) VALUES (7, N'Asp Net Core', 65)
+INSERT [dbo].[Skills] ([Id], [Title], [Rate]) VALUES (8, N'', NULL)
 GO
 SET IDENTITY_INSERT [dbo].[Skills] OFF
 GO
@@ -153,11 +153,12 @@ INSERT [dbo].[Slogans] ([Id], [Sectionname], [Title], [Description]) VALUES (2, 
 GO
 SET IDENTITY_INSERT [dbo].[Slogans] OFF
 GO
-/****** Object:  StoredProcedure [dbo].[ap_CreateContact]    Script Date: 24.09.2023 00:33:40 ******/
+/****** Object:  StoredProcedure [dbo].[ap_CreateContact]    Script Date: 24.09.2023 02:13:17 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
+
 create procedure [dbo].[ap_CreateContact]
 @Name nvarchar(250),
 @Email nvarchar(250),
@@ -168,7 +169,7 @@ begin
 insert into Contacts values(@Name,@Email,@Subject,@Message)
 end
 GO
-/****** Object:  StoredProcedure [dbo].[ap_ListCustomerReviews]    Script Date: 24.09.2023 00:33:40 ******/
+/****** Object:  StoredProcedure [dbo].[ap_ListCustomerReviews]    Script Date: 24.09.2023 02:13:17 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -179,7 +180,7 @@ begin
 select * from CustomerReviews
 end
 GO
-/****** Object:  StoredProcedure [dbo].[ap_ListSkill]    Script Date: 24.09.2023 00:33:40 ******/
+/****** Object:  StoredProcedure [dbo].[ap_ListSkill]    Script Date: 24.09.2023 02:13:17 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -191,7 +192,7 @@ select * from Skills
 end
 
 GO
-/****** Object:  StoredProcedure [dbo].[ap_ListSlogan]    Script Date: 24.09.2023 00:33:40 ******/
+/****** Object:  StoredProcedure [dbo].[ap_ListSlogan]    Script Date: 24.09.2023 02:13:17 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
