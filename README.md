@@ -1,7 +1,7 @@
 M&Y Eğitim Akademisi Portfolio Projesi
 Bu ASP.NET Core MVC 5 tabanlı kişisel web uygulamasıdır.
 
-Db yönetimi stored procedurler üzerinden yapıldı.
+Db sogruları stored procedureler üzerinden yapıldı.
 
 Teknolojiler
 Bu projede aşağıdaki teknolojiler kullanılmıştır:
