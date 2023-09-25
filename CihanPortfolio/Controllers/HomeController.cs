@@ -62,7 +62,7 @@ namespace CihanPortfolio.Controllers
         [HttpPost]
         public ActionResult Contact(Contact contact)
         {
-            SqlConnection connection = new SqlConnection("server=.\\SQLExpress; database=CvDb; integrated security =true");
+            SqlConnection connection = new SqlConnection("server=.\\SQLExpress; database=CvDbCihan; integrated security =true");
             var affectedRows = connection.Execute(sql: "ap_CreateContact", commandType: System.Data.CommandType.StoredProcedure, param: contact);
 
             return RedirectToAction("Index");
@@ -78,7 +78,7 @@ namespace CihanPortfolio.Controllers
         [HttpGet]
         public ActionResult Portfolio()
         {
-            SqlConnection connection = new SqlConnection("server=.\\SQLExpress; database=CvDb; integrated security =true");
+            SqlConnection connection = new SqlConnection("server=.\\SQLExpress; database=CvDbCihan; integrated security =true");
             SqlCommand command = new SqlCommand();
             command.Connection = connection;
             command.CommandType = System.Data.CommandType.StoredProcedure;
